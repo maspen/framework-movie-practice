@@ -41,6 +41,11 @@ Movie Lits
 	      <div className="navbar">
 	    		<Header />
 	    	</div>
+	    	<div className="row">
+	    		<div className="col-md-5">
+	    			<div><VideoList movies={this.state.movies} /></div>
+	    		</div>
+	    	</div>
     	</div>
     )
   };

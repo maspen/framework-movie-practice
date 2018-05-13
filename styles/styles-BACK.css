@@ -1,57 +1,14 @@
 @import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
 body {
-  /*background: red;*/
-  /*#f1f1f1;*/
-  /*background: #20262E;*/
-  /*padding: 20px;*/
-  font-family: Helvetica;
-}
-
-#app {
-/*  background: #fff;
-  margin-bottom: 20px;*/
-  background: #fff;
-  position:relative;
-  width:98%;
-  height:100%;
-  border: solid;
-/*  border-radius: 4px;*/
-  padding: 5px;
-/*  transition: all 0.2s;*/
+  background: #f1f1f1;
 }
 
 .navbar {
-  background: #e6e6e6;
-  /*background: red;*/
-  /*margin-bottom: 20px;*/
-  text-align: center;
-  padding: 5px;
+  background: #fff;
+  margin-bottom: 20px;
 }
 
-.movie-list-header {
-/*  background-color: #F1F1F1;
-  text-align: center;
-  padding: 20px;*/
-  /* col-md-6 */
-  position:relative;
-  width:98%;
-  /*min-height:10px;*/
-  /*padding-right:15px;*/
-  /*padding-left:15px*/
-}
-
-.title {
-/*  font-size: 1.2em;
-  text-align: center;
-  padding: 10px;*/
-/*  padding: 0;
-  border: 0;
-  font-family: 'Starjout';*/
-  font-size: 20px;
-}
-
-/*
 .navbar img {
   height: 40px;
   width: 50px;
@@ -142,4 +99,3 @@ h5 {
     margin-right: 20px;
   }
 }
-*/

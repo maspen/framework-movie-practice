@@ -10,7 +10,7 @@ class Header extends React.Component {
   render() {
   	return (
   		<div className="movie-list-header">
-  			<div><h1 className="title">{this.state.title}</h1></div>
+  			<div><h1>{this.state.title}</h1></div>
 			</div>
   	)
   };
