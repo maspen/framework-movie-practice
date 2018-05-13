@@ -1,0 +1,42 @@
+{
+  "name": "framework-movie-practice",
+  "version": "1.0.0",
+  "description": "movie practice using React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel . --out-dir compiled --presets=env,react --ignore=node_modules,compiled --source-maps inline -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maspen/framework-movie-practice.git"
+  },
+  "keywords": [
+    "movie",
+    "demo",
+    "using",
+    "React"
+  ],
+  "author": "matt aspen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maspen/framework-movie-practice/issues"
+  },
+  "homepage": "https://github.com/maspen/framework-movie-practice#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "jquery": "^2.2.1",
+    "lodash": "^4.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.5.0",
+    "babel-watch": "^2.0.7",
+    "chai": "^3.5.0",
+    "mocha": "2.3.3",
+    "sinon": "1.17.3"
+  }
+}
