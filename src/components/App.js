@@ -8,7 +8,7 @@ class App extends React.Component {
 			  {title: 'Hackers'},
 			  {title: 'The Grey'},
 			  {title: 'Sunshine'},
-			  {title: 'Ex Machina'},
+			  {title: 'Ex Machina'}
 			]
     };
   }
@@ -28,13 +28,22 @@ Movie Lits
 
 *-----------------
 
-*/  
+	<div id="container" ...
 
-  render() {
+	<scripet>
+		var dest = document.querySelector("#container")
+	</>
+
+*/  
+	render() {
     return (
-    	<h1>test</h1>
-    );
-  }
+    	<div>
+	      <div className="navbar">
+	    		<Header />
+	    	</div>
+    	</div>
+    )
+  };
 }
 
 window.App = App;
