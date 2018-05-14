@@ -3,43 +3,53 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      movies: [
+      stubData: [
 			  {title: 'Mean Girls'},
 			  {title: 'Hackers'},
 			  {title: 'The Grey'},
 			  {title: 'Sunshine'},
 			  {title: 'Ex Machina'}
-			]
+			],
+			movies: [],
+			searchQuery: ''
     };
+
+		this.state.movies = this.state.stubData;
   }
 
   componentDidMount() {
-  	// put methods here
-  }
+  	//
+  };
 
-/*
-+-----------------
-Movie Lits
-*-----------------
+  handleSearchBoxInputChange(text) {
+  	this.setState({ searchQuery: text });	
+  };
+ 
+	searchMoviesButtonClick() {
+		this.searchMovies();
+	};
 
-  *----------*
-	movie title
-  *----------*  
+	searchMovies() {
+		var movieMatchesArray = this.state.movies.filter
+			(movie => movie.title.includes(this.state.searchQuery)); // want partials as well
+		if(movieMatchesArray.length > 0) {
+			this.setState({ movies: movieMatchesArray});
+		} else {
+			this.state.movies = [];
+			this.setState({ movies: [{title: '\"' + this.state.searchQuery + '\" was not found'}] });		
+		}
+	}
 
-*-----------------
-
-	<div id="container" ...
-
-	<scripet>
-		var dest = document.querySelector("#container")
-	</>
-
-*/  
 	render() {
     return (
     	<div>
 	      <div className="navbar">
-	    		<Header />
+	    		<div className="header">
+	    			<div><Header /></div>
+	    		</div>
+	    		<div className="col-md-6 offset-md-3">
+	    			<div><SearchBar search={this.searchMoviesButtonClick.bind(this)} textBoxChange={this.handleSearchBoxInputChange.bind(this)} /></div>
+	    		</div>
 	    	</div>
 	    	<div className="row">
 	    		<div className="col-md-5">

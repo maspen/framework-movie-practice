@@ -75,12 +75,6 @@ body {
   cursor: pointer;
 }
 
-/*
-.navbar img {
-  height: 40px;
-  width: 50px;
-}
-
 .search-bar {
   border-radius: 1px;
   background: #fff;
@@ -90,6 +84,7 @@ body {
   border-radius: 2px;
   width: 80%
 }
+
 .search-bar .btn {
   border-radius: 2px;
   border-color: #d3d3d3;
@@ -102,6 +97,12 @@ body {
   border-color: #c6c6c6;
   background: #f0f0f0;
   box-shadow: 0 1px 0 rgba(0,0,0,0.10);
+}
+
+/*
+.navbar img {
+  height: 40px;
+  width: 50px;
 }
 
 .video-player {
