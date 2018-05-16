@@ -1,19 +1,5 @@
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      title: 'Movie List'
-    };
-  }
-
-  render() {
-  	return (
-  		<div className="movie-list-header">
-  			<div><h1>{this.state.title}</h1></div>
-			</div>
-  	)
-  };
-}
+var Header = (props) => (
+  <div className="movie-list-header">Movie List</div>
+);
 
 window.Header = Header;

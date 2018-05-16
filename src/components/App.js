@@ -11,7 +11,8 @@ class App extends React.Component {
 			  {title: 'Ex Machina'}
 			],
 			movies: [],
-			searchQuery: ''
+			searchQuery: '',
+      newMovie: ''
     };
 
 		this.state.movies = this.state.stubData;
@@ -39,23 +40,48 @@ class App extends React.Component {
 			this.setState({ movies: [{title: '\"' + this.state.searchQuery + '\" was not found'}] });		
 		}
 	}
-
+  
+  handleAddMoveInputChange(text) {
+// console.log('handleAddMoveInputChange txt ', text);
+    this.setState({ newMovie: text });    
+  }
+  
+  addMovieButtonClick() {
+console.log('addMovieButtonClick');
+    this.addMovie;
+  }
+  
+  addMovie() {
+console.log('addMovie');     
+  }
+  
 	render() {
     return (
-    	<div>
-	      <div className="navbar">
-	    		<div className="header">
-	    			<div><Header /></div>
-	    		</div>
-	    		<div className="col-md-6 offset-md-3">
-	    			<div><SearchBar search={this.searchMoviesButtonClick.bind(this)} textBoxChange={this.handleSearchBoxInputChange.bind(this)} /></div>
-	    		</div>
-	    	</div>
-	    	<div className="row">
-	    		<div className="col-md-5">
-	    			<div><VideoList movies={this.state.movies} /></div>
-	    		</div>
-	    	</div>
+    	<div className="container-fluid">
+        <div className="row">
+          <div className="col-md-12">
+            <Header />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-4" />
+          <div className="col-md-4">
+            <AddMovieBar add={this.addMovieButtonClick.bind(this)} textBoxChange={this.handleAddMoveInputChange.bind(this)}/>
+          </div>
+          <div className="col-md-4" />
+        </div>
+        <div className="row">
+          <div className="col-md-4" />
+          <div className="col-md-4">
+            <SearchBar search={this.searchMoviesButtonClick.bind(this)} textBoxChange={this.handleSearchBoxInputChange.bind(this)} />
+          </div>
+          <div className="col-md-4" />
+        </div>
+        <div className="row">
+          <div className="col-md-12 border-helper">
+            <VideoList movies={this.state.movies} />
+          </div>
+        </div>
     	</div>
     )
   };
