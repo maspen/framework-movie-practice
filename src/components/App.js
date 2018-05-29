@@ -43,13 +43,21 @@ class App extends React.Component {
 
   /** ---------- Search --------- */
 
-  handleSearchBoxInputChange(text) {
+  // handleSearchBoxInputChange(text) {
+  //   if (this.state.searchBoxText) {
+  //     this.state.searchBoxText = false;
+  //     this.state.addBoxText = true;
+  //     this.restoreSearchMovies();
+  //   }
+  // 	this.setState({ searchQuery: text });	
+  // };
+  handleSearchBoxInputChange(event) {
     if (this.state.searchBoxText) {
       this.state.searchBoxText = false;
       this.state.addBoxText = true;
       this.restoreSearchMovies();
     }
-  	this.setState({ searchQuery: text });	
+    this.setState({ searchQuery: event.target.value }); 
   };
  
 	searchMoviesButtonClick() {
@@ -79,13 +87,21 @@ class App extends React.Component {
   
   /** ---------- Add --------- */
 
-  handleAddMoveInputChange(text) {
+  // handleAddMoveInputChange(text) {
+  //   if(this.state.addBoxText) {
+  //     this.state.addBoxText = false;
+  //     this.state.searchBoxText = true;
+  //     this.restoreAddMovies();
+  //   }
+  //   this.setState({ addMovie: text });
+  // }
+  handleAddMoveInputChange(event) {
     if(this.state.addBoxText) {
       this.state.addBoxText = false;
       this.state.searchBoxText = true;
       this.restoreAddMovies();
     }
-    this.setState({ addMovie: text });
+    this.setState({ addMovie: event.target.value });
   }
 
   addMovieButtonClick() {
