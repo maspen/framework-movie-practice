@@ -54,6 +54,7 @@ body {
 }
 
 .video-list-entry {
+  display: block;
   font-size: 16px;
   padding: 8px;
   border: solid;
@@ -64,6 +65,39 @@ body {
   color: #e62117;
   cursor: pointer;
   background-color: #fff;
+}
+
+/*.watchedBase {
+  float: right;
+  text-align: center;
+  width: 20px;
+  height: 25px;
+  margin: 4px 2px;
+  padding-right: 70px;
+}*/
+
+.watched {
+  /*@extend .watchedBase;*/
+  background-color: #4CAF50;
+  color: white;
+  float: right;
+  text-align: center;
+  width: 20px;
+  height: 25px;
+  margin: 4px 2px;
+  padding-right: 70px;
+}
+
+.watched-true {
+  /*@extend .watchedBase;*/
+  background-color: white;
+  color: #4CAF50;
+  float: right;
+  text-align: center;
+  width: 20px;
+  height: 25px;
+  margin: 4px 2px;
+  padding-right: 70px;
 }
 
 /* 'Movie List' */

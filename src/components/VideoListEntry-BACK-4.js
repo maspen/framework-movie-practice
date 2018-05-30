@@ -1,13 +1,33 @@
-var VideoListEntry = (props) => (
+class VideoListEntry extends React.component {
+	constructor(props) {
+    super(props);
 
-	<div className="video-list-entry">
-		<span id={props.id}>{props.movie.title}
-			<button className={props.movie.watched ? 'watched-true' : 'watched'} 
-				onClick={() => props.watchedClicked(props.movie, props.movieIndex)} value={props.id}>Watched</button>
-		</span>
-	</div>
-);
-// onClick={(e) => props.watchedClicked(e, props.movie)} value={props.id}>Watched</button>
+    this.state = {
+
+    }
+  }
+
+  alertAppOfMovieWatcher(movie) {
+  	props.watchedClicked(movie);
+  }
+
+/*
+movie -> props.movie
+key -> props.key
+movieIndex -> props.movieIndex
+watchedClicked -> props.watchedClicked ---> App.this.watchedClicked
+*/
+
+  render() {
+  	return(
+			<div className="video-list-entry">
+				<span id={props.id}>{props.movie.title}
+					<button className={props.movie.watched ? 'watched-true' : 'watched'} 
+						onClick={() => this.alertAppOfMovieWatcher(null, "foo")} value={props.id}>Watched</button>
+				</span>
+			</div>)
+  }
+};
 // old: onClick={(e) => props.watchedClicked(e, `${props.movie}`)} 
 // onClick={() => this.removeTag(i)}
 /*

@@ -1,7 +1,7 @@
 var VideoList = (props) => (
 /*
 movies: [
-        {title: 'Mean Girls'},
+        {title: 'Mean Girls', watched: true/false},
         {title: 'Hackers'},
         {title: 'The Grey'},
         {title: 'Sunshine'},
@@ -10,7 +10,10 @@ movies: [
 */  
   <div className="video-list">
     {props.movies.map((movie, i) =>
-      <VideoListEntry movie={movie} key={movie.title.toString()} movieIndex={i} />
+      <VideoListEntry movie={movie} 
+        key={movie.title.toString()} 
+        movieIndex={i} 
+        watchedClicked={props.watched} />
     )}
   </div>
 );
@@ -18,5 +21,12 @@ movies: [
 VideoList.propTypes = {
   movies: React.PropTypes.array.isRequired
 };
+
+/*
+      <VideoListEntry movie={movie} 
+        key={movie.title.toString()} 
+        movieIndex={i} 
+        watchedClicked={props.watched} />
+*/
 
 window.VideoList = VideoList;

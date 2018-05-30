@@ -4,16 +4,16 @@ class App extends React.Component {
 
     this.state = {
       stubData: [
-			  {title: 'Mean Girls'},
-			  {title: 'Hackers'},
-			  {title: 'The Grey'},
-			  {title: 'Sunshine'},
-			  {title: 'Ex Machina'}
+			  {title: 'Mean Girls', watched: true},
+			  {title: 'Hackers', watched: false},
+			  {title: 'The Grey', watched: false},
+			  {title: 'Sunshine', watched: false},
+			  {title: 'Ex Machina', watched: false}
 			],
 			movies: [],
 			searchQuery: '',
       addMovies: [
-        {title: 'First Added Movie'}
+        {title: 'First Added Movie', watched: false}
       ],
       addMovie: '',
       searchBoxText: true,
@@ -31,6 +31,9 @@ class App extends React.Component {
 
     this.restoreSearchMovies = this.restoreSearchMovies.bind(this);
     this.restoreAddMovies = this.restoreAddMovies.bind(this);
+    // this.watchedClicked = this.watchedClicked.bind(this, 'foo');
+    // this.watchedClicked = this.watchedClicked.bind(this);
+    this.watchedClicked = this.watchedClicked.bind(this);
   }
 
   componentWillMount() {
@@ -43,14 +46,6 @@ class App extends React.Component {
 
   /** ---------- Search --------- */
 
-  // handleSearchBoxInputChange(text) {
-  //   if (this.state.searchBoxText) {
-  //     this.state.searchBoxText = false;
-  //     this.state.addBoxText = true;
-  //     this.restoreSearchMovies();
-  //   }
-  // 	this.setState({ searchQuery: text });	
-  // };
   handleSearchBoxInputChange(event) {
     if (this.state.searchBoxText) {
       this.state.searchBoxText = false;
@@ -87,14 +82,6 @@ class App extends React.Component {
   
   /** ---------- Add --------- */
 
-  // handleAddMoveInputChange(text) {
-  //   if(this.state.addBoxText) {
-  //     this.state.addBoxText = false;
-  //     this.state.searchBoxText = true;
-  //     this.restoreAddMovies();
-  //   }
-  //   this.setState({ addMovie: text });
-  // }
   handleAddMoveInputChange(event) {
     if(this.state.addBoxText) {
       this.state.addBoxText = false;
@@ -125,10 +112,15 @@ class App extends React.Component {
   restoreAddMovies() {
     this.setState({ movies: this.state.addMovies });
   }
+  
+  watchedClicked(movie, index) {
+    var toggleWatched = movie.watched ? false : true;
 
-  // doesAddMovieExist(addMovie) {
-  //   this.state.movies
-  // }
+    const currentMovies = this.state.movies;
+    currentMovies[index].watched = toggleWatched;
+
+    this.forceUpdate();
+  }
   
 	render() {
     return (
@@ -154,7 +146,7 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-md-12 border-helper">
-            <VideoList movies={this.state.movies} />
+            <VideoList movies={this.state.movies} watched={this.watchedClicked} />
           </div>
         </div>
     	</div>
